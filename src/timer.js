@@ -1,13 +1,13 @@
-function expiryTimer(milliseconds) {
-  function* cd(time) {
-    const deadline = (new Date()).getTime() + Math.max(0, time);
-    let now = (new Date()).getTime();
-    while (now < deadline) {
-      yield deadline - now;
-      now = (new Date()).getTime();
-    }
+function* cd(time) {
+  const deadline = (new Date()).getTime() + Math.max(0, time);
+  let now = (new Date()).getTime();
+  while (now < deadline) {
+    yield deadline - now;
+    now = (new Date()).getTime();
   }
+}
 
+function expiryTimer(milliseconds) {
   let timer = cd(milliseconds);
   timer.next();
 
