@@ -13,8 +13,13 @@ function expiryTimer(milliseconds) {
 
   return {
     done: () => timer.next().done,
-    reset: () => {
-      timer = cd(milliseconds);
+    reset: (newLength) => {
+      if (typeof newLength === 'undefined') {
+        timer = cd(milliseconds);
+      } else {
+        timer = cd(newLength);
+      }
+
       timer.next();
     },
   };

@@ -31,6 +31,24 @@ if (e.done()) {
 }
 ```
 
+## API
+To create a timer that counts down for `time` milliseconds:
+```
+const counter = timer(time);
+```
+
+Call `done()` on the timer to see if it has expired:
+
+```
+if (counter.done() {
+    /* do something */
+}
+```
+
+Call `reset()` to reset the timer back to its original length.
+
+Call `reset(newLength)` to reset the timer to a new length.
+
 ## License
 
 Provided under the [MIT License](http://spdx.org/licenses/MIT).

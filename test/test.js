@@ -18,14 +18,31 @@ describe('Expiry Timer', () => {
     expect(timer(-1).done()).to.be.true;
   });
 
-  it('can be reset', () => new Promise((resolve) => {
+  it('can be reset', (done) => {
     const t = timer(50);
     expect(t.done()).to.be.false;
     setTimeout(() => {
       expect(t.done()).to.be.true;
       t.reset();
       expect(t.done()).to.be.false;
-      resolve();
+      done();
     }, 100);
-  }));
+  });
+
+  it('can be reset to a different period', (done) => {
+    const t = timer(50);
+    expect(t.done()).to.be.false;
+    setTimeout(() => {
+      expect(t.done()).to.be.true;
+      t.reset(150);
+      expect(t.done()).to.be.false;
+      setTimeout(() => {
+        expect(t.done()).to.be.false;
+        setTimeout(() => {
+          expect(t.done()).to.be.true;
+          done();
+        }, 100);
+      }, 100);
+    }, 100);
+  });
 });
