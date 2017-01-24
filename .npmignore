@@ -1,0 +1,10 @@
+.eslintignore
+.eslintrc.json
+.babelrc
+.codeclimate.yml
+.travis.yml
+.gitignore
+.npmignore
+test/
+src/
+node_modules/
