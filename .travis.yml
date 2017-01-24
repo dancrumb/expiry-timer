@@ -6,6 +6,8 @@ node_js:
 before_install: if [[ `npm -v` != 3* ]]; then npm i -g npm@3; fi
 script:
 - npm test
+before_deploy:
+- npm run compile
 deploy:
   provider: npm
   email: dancrumb@gmail.com
