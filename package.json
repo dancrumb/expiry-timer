@@ -1,7 +1,7 @@
 {
   "name": "expiry-timer",
   "version": "1.1.2",
-  "description": "",
+  "description": "A handy module for creating an expiry timer",
   "main": "lib/timer.js",
   "scripts": {
     "compile": "babel -d lib/ src/",
