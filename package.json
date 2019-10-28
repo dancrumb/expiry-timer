@@ -5,7 +5,7 @@
   "main": "lib/timer.js",
   "scripts": {
     "compile": "babel -d lib/ src/",
-    "test": "mocha --recursive  --compilers js:babel-core/register",
+    "test": "mocha --recursive  --require babel-core/register",
     "preversion": "npm run compile"
   },
   "author": "Dan Rumney <dancrumb@gmail.com>",
